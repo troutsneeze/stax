@@ -1,0 +1,11 @@
+# Very lazy makefile
+
+FLAGS=-Wall -DALLEGRO_STATICLINK -I/home/trent/code/win-include -L/home/trent/code/win-lib
+
+all:
+	i686-w64-mingw32-g++ $(FLAGS) icon.res *.cpp -o stax -static -static-libgcc -static-libstdc++ -Wl,--subsystem,windows -lalleg -ldsound -lgdi32 -lddraw -lole32 -ldxguid -lwinmm -ldinput8 -lm
+
+clean:
+	rm -f stax stax.exe
+	rm -f stax.hs
+	rm -f stax.cfg

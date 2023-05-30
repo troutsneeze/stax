@@ -1,0 +1,13 @@
+FLAGS=-Wall -DALLEGRO_STATICLINK -I/home/trent/code/win-include -L/home/trent/code/win-lib
+
+OBJS=clobber.o config.o coop.o input.o main.o puzzle.o shared.o shifty.o sucka.o
+
+all: $(OBJS)
+	i686-w64-mingw32-gcc $(FLAGS) -o stax icon.res $(OBJS) -lalleg -static -static-libgcc -static-libstdc++ -Wl,--subsystem,windows -ldsound -lgdi32 -lddraw -lole32 -ldxguid -lwinmm -ldinput8 -lm
+
+$(OBJS): stax.h
+.c.o:
+	i686-w64-mingw32-gcc $(FLAGS) -c $<
+
+clean:
+	@rm -f *~ *.o stax stax.exe
