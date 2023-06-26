@@ -129,5 +129,5 @@ aren't self explanatory enough.
 -------
 
 To contact me:
-  Trent Gamblin <tmg@cyberlink.bc.ca>
+  Trent Gamblin <contact@nooskewl.com>
 
